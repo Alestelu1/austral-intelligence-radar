@@ -1,2 +1,1 @@
-# austral-intelligence-radar
-austral-intelligence-radar
+# Austral Intelligence Radar
