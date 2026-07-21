@@ -1,63 +1,63 @@
-# Tasks
+# Tareas
 
-## Phase 1 — Foundation
+## Fase 1 — Fundación
 
-- [x] Initialize public repository.
-- [x] Define project problem and MVP boundaries.
-- [x] Add Kiro Steering context and editorial rules.
-- [x] Define requirements and initial design.
-- [ ] Add Python project structure and dependency management.
-- [ ] Define the analysis JSON schema in code.
+- [x] Inicializar el repositorio público.
+- [x] Definir el problema y los límites del MVP.
+- [x] Añadir el contexto de Steering y las reglas editoriales.
+- [x] Definir los requisitos y el diseño inicial.
+- [ ] Añadir la estructura del proyecto Python y la gestión de dependencias.
+- [ ] Definir en código el esquema JSON del análisis.
 
-## Phase 2 — Local vertical slice
+## Fase 2 — Flujo vertical local
 
-- [ ] Implement input validation.
-- [ ] Implement a deterministic mock analyzer for UI development.
-- [ ] Build the minimal web form and result view.
-- [ ] Add tests for empty input and valid structured output.
-- [ ] Demonstrate the complete flow locally without AWS persistence.
+- [ ] Implementar validación de entrada.
+- [ ] Implementar un analizador simulado y determinista para desarrollar la interfaz.
+- [ ] Construir el formulario web mínimo y la vista de resultados.
+- [ ] Añadir pruebas para entrada vacía y salida estructurada válida.
+- [ ] Demostrar localmente el flujo completo sin persistencia en AWS.
 
-## Phase 3 — AI integration
+## Fase 3 — Integración de IA
 
-- [ ] Confirm the AWS model service available to the account.
-- [ ] Implement the model adapter.
-- [ ] Create a constrained system prompt based on Steering rules.
-- [ ] Parse and validate model JSON.
-- [ ] Add safe fallback behavior for incomplete model output.
-- [ ] Test with at least five representative sources.
+- [ ] Confirmar el servicio de modelos de AWS disponible en la cuenta.
+- [ ] Implementar el adaptador del modelo.
+- [ ] Crear un prompt de sistema restringido según las reglas de Steering.
+- [ ] Interpretar y validar el JSON producido por el modelo.
+- [ ] Añadir un comportamiento seguro ante respuestas incompletas.
+- [ ] Probar con al menos cinco fuentes representativas.
 
-## Phase 4 — AWS integration
+## Fase 4 — Integración con AWS
 
-- [ ] Create DynamoDB table design.
-- [ ] Implement record persistence.
-- [ ] Package the backend for AWS Lambda.
-- [ ] Configure API Gateway.
-- [ ] Configure least-privilege IAM permissions.
-- [ ] Confirm CloudWatch logging without secrets.
+- [ ] Crear el diseño de la tabla DynamoDB.
+- [ ] Implementar la persistencia de registros.
+- [ ] Empaquetar el backend para AWS Lambda.
+- [ ] Configurar API Gateway.
+- [ ] Configurar permisos IAM con mínimo privilegio.
+- [ ] Confirmar registros en CloudWatch sin secretos.
 
-## Phase 5 — Deployment and validation
+## Fase 5 — Despliegue y validación
 
-- [ ] Deploy the public demo.
-- [ ] Configure frontend API endpoint and CORS.
-- [ ] Test success, validation and service-failure paths.
-- [ ] Verify that every result preserves provenance.
-- [ ] Verify that uncertain content triggers human review.
+- [ ] Desplegar la demostración pública.
+- [ ] Configurar el endpoint de la API y CORS en el frontend.
+- [ ] Probar los flujos de éxito, validación y fallo de servicio.
+- [ ] Verificar que cada resultado conserve la procedencia.
+- [ ] Verificar que el contenido incierto active revisión humana.
 
-## Phase 6 — Deliverables
+## Fase 6 — Entregables
 
-- [ ] Complete README installation and architecture sections.
-- [ ] Add architecture diagram.
-- [ ] Document Kiro Specs, Steering and development workflow.
-- [ ] Document AWS services used.
-- [ ] Remove secrets and inspect Git history.
-- [ ] Prepare a video script under five minutes.
-- [ ] Record the functional demo.
-- [ ] Verify repository, demo and video links before submission.
+- [ ] Completar en el README las secciones de instalación y arquitectura.
+- [ ] Añadir un diagrama de arquitectura.
+- [ ] Documentar Specs, Steering y el flujo de desarrollo con Kiro.
+- [ ] Documentar los servicios de AWS utilizados.
+- [ ] Eliminar secretos e inspeccionar el historial de Git.
+- [ ] Preparar un guion de video de menos de cinco minutos.
+- [ ] Grabar la demostración funcional.
+- [ ] Verificar los enlaces del repositorio, la demo y el video antes de entregar.
 
-## Implementation order
+## Orden de implementación
 
-Work from a thin vertical slice and do not begin optional features until the following path works:
+Trabajar desde un flujo vertical mínimo y no comenzar funciones opcionales hasta que funcione este recorrido:
 
 ```text
-submit text → receive valid analysis → display result → persist in AWS
+enviar texto → recibir análisis válido → mostrar resultado → persistir en AWS
 ```
