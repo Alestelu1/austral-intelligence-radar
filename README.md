@@ -1,68 +1,68 @@
 # Austral Intelligence Radar
 
-Specialized AI agent for analyzing, classifying and preserving the provenance of southern Chilean and Antarctic information sources.
+Agente de IA especializado para analizar, clasificar y preservar la procedencia de fuentes sobre el extremo austral de Chile y la Antártica.
 
 ## Hackathon
 
-- Event: Hackathon Kiro by Código Facilito and AWS
-- Challenge: Reto 3 — Agentes especializados
-- Development period: 20–27 July 2026
-- Participant: Alexis Stelu
-- Status: MVP in development
+- Evento: Hackathon Kiro de Código Facilito y AWS
+- Reto: Reto 3 — Agentes especializados
+- Periodo de desarrollo: 20–27 de julio de 2026
+- Participante: Alexis Stelu
+- Estado: MVP en desarrollo
 
-## Problem
+## Problema
 
-Researchers, editors and developers working with territorial and Antarctic information must manually review scattered sources, identify their geographic scope, extract relevant entities, assess editorial value and preserve provenance. This process is repetitive, slow and prone to losing traceability.
+Investigadores, editores y desarrolladores que trabajan con información territorial y antártica deben revisar manualmente fuentes dispersas, identificar su alcance geográfico, extraer entidades relevantes, evaluar su valor editorial y conservar su procedencia. Este proceso es repetitivo, lento y propenso a perder trazabilidad.
 
-## Proposed solution
+## Solución propuesta
 
-Austral Intelligence Radar receives source content and produces a structured analysis containing:
+Austral Intelligence Radar recibe contenido de una fuente y produce un análisis estructurado con:
 
-- title;
-- summary;
-- territory;
-- category;
-- detected entities;
-- original source;
-- related Austral Beacon project;
-- editorial relevance;
-- confidence level;
-- human-review requirement.
+- título;
+- resumen;
+- territorio;
+- categoría;
+- entidades detectadas;
+- fuente original;
+- proyecto relacionado de Austral Beacon;
+- relevancia editorial;
+- nivel de confianza;
+- necesidad de revisión humana.
 
-## MVP workflow
+## Flujo del MVP
 
 ```text
-Source text
+Texto de una fuente
     ↓
-Specialized AI analysis
+Análisis especializado con IA
     ↓
-Structured JSON result
+Resultado JSON estructurado
     ↓
-AWS persistence
+Persistencia en AWS
     ↓
-Human-readable result
+Resultado legible para una persona
 ```
 
-## Planned stack
+## Stack previsto
 
-- Kiro IDE and Spec-Driven Development
+- Kiro IDE y Spec-Driven Development
 - Python
 - AWS Lambda
 - Amazon API Gateway
 - Amazon DynamoDB
-- Amazon Bedrock or another AWS-compatible model service
-- Minimal web interface
+- Amazon Bedrock u otro servicio de modelos compatible con AWS
+- Interfaz web mínima
 
-## Out of scope for the hackathon
+## Fuera del alcance del hackathon
 
-- Full RAG platform
+- Plataforma RAG completa
 - Knowledge Graph
-- Multiple autonomous agents
-- Massive PDF ingestion
-- Complete Austral Beacon editorial dashboard
-- Authentication and multi-user management
+- Múltiples agentes autónomos
+- Ingesta masiva de PDF
+- Panel editorial completo de Austral Beacon
+- Autenticación y gestión multiusuario
 
-## Repository structure
+## Estructura del repositorio
 
 ```text
 .kiro/
@@ -78,15 +78,15 @@ src/
 tests/
 ```
 
-## Success criteria
+## Criterios de éxito
 
-- A user can submit source text.
-- The agent returns valid structured analysis.
-- The result preserves source provenance.
-- Uncertain claims are marked for human review.
-- The application is publicly demonstrable.
-- AWS and Kiro usage are documented.
+- Una persona puede enviar el texto de una fuente.
+- El agente devuelve un análisis estructurado válido.
+- El resultado conserva la procedencia de la fuente.
+- Las afirmaciones inciertas quedan marcadas para revisión humana.
+- La aplicación puede demostrarse públicamente.
+- El uso de AWS y Kiro queda documentado.
 
-## License
+## Licencia
 
 MIT
