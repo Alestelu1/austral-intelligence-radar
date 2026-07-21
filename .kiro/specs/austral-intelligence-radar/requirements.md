@@ -1,89 +1,89 @@
-# Requirements
+# Requisitos
 
-## 1. Purpose
+## 1. Propósito
 
-Build a specialized AI agent that converts source text into a structured, traceable intelligence record for Austral Beacon Media.
+Construir un agente de IA especializado que convierta el texto de una fuente en una ficha de inteligencia estructurada y trazable para Austral Beacon Media.
 
-## 2. Functional requirements
+## 2. Requisitos funcionales
 
-### FR-1 — Submit source content
+### RF-1 — Enviar contenido de una fuente
 
-The user must be able to submit source text and optionally a source URL.
+La persona usuaria debe poder enviar texto y, de manera opcional, una URL de origen.
 
-**Acceptance criteria**
+**Criterios de aceptación**
 
-- WHEN the user submits non-empty text, THE SYSTEM SHALL accept it for analysis.
-- WHEN the text is empty, THE SYSTEM SHALL return a clear validation error.
+- CUANDO la persona envíe texto no vacío, EL SISTEMA DEBERÁ aceptarlo para su análisis.
+- CUANDO el texto esté vacío, EL SISTEMA DEBERÁ devolver un error de validación claro.
 
-### FR-2 — Generate structured analysis
+### RF-2 — Generar análisis estructurado
 
-The system must return:
+El sistema debe devolver:
 
-- title;
-- concise summary;
-- territory;
-- category;
-- detected entities;
-- related Austral Beacon project;
-- editorial relevance;
-- confidence level;
-- human-review flag;
-- source provenance.
+- título;
+- resumen conciso;
+- territorio;
+- categoría;
+- entidades detectadas;
+- proyecto relacionado de Austral Beacon;
+- relevancia editorial;
+- nivel de confianza;
+- indicador de revisión humana;
+- procedencia de la fuente.
 
-**Acceptance criteria**
+**Criterios de aceptación**
 
-- WHEN analysis succeeds, THE SYSTEM SHALL return valid JSON matching the defined schema.
-- IF a field cannot be determined, THE SYSTEM SHALL use `unknown` or an empty collection instead of inventing data.
+- CUANDO el análisis finalice correctamente, EL SISTEMA DEBERÁ devolver JSON válido conforme al esquema definido.
+- SI un campo no puede determinarse, EL SISTEMA DEBERÁ usar `unknown` o una colección vacía en lugar de inventar datos.
 
-### FR-3 — Preserve provenance
+### RF-3 — Conservar la procedencia
 
-The system must preserve the supplied URL or source identifier.
+El sistema debe conservar la URL o el identificador de origen proporcionado.
 
-**Acceptance criteria**
+**Criterios de aceptación**
 
-- WHEN a URL is supplied, THE SYSTEM SHALL include it unchanged in the result.
-- WHEN no URL is supplied, THE SYSTEM SHALL explicitly mark the source as user-provided text.
+- CUANDO se proporcione una URL, EL SISTEMA DEBERÁ incluirla sin modificaciones en el resultado.
+- CUANDO no se proporcione una URL, EL SISTEMA DEBERÁ indicar explícitamente que la fuente corresponde a texto proporcionado por la persona usuaria.
 
-### FR-4 — Require human review when needed
+### RF-4 — Requerir revisión humana cuando corresponda
 
-The agent must detect uncertainty or unsupported claims.
+El agente debe detectar incertidumbre o afirmaciones sin respaldo suficiente.
 
-**Acceptance criteria**
+**Criterios de aceptación**
 
-- IF confidence is low or conflicting claims are present, THE SYSTEM SHALL set `requires_human_review` to true.
-- THE SYSTEM SHALL provide a short reason for the review flag.
+- SI la confianza es baja o existen afirmaciones contradictorias, EL SISTEMA DEBERÁ establecer `requires_human_review` en `true`.
+- EL SISTEMA DEBERÁ entregar una razón breve para activar la revisión.
 
-### FR-5 — Persist analysis in AWS
+### RF-5 — Persistir el análisis en AWS
 
-The system must store successful analyses in an AWS data service.
+El sistema debe guardar los análisis correctos en un servicio de datos de AWS.
 
-**Acceptance criteria**
+**Criterios de aceptación**
 
-- WHEN an analysis succeeds, THE SYSTEM SHALL save a record with a unique identifier and timestamp.
-- IF persistence fails, THE SYSTEM SHALL report the failure without exposing secrets.
+- CUANDO un análisis finalice correctamente, EL SISTEMA DEBERÁ guardar un registro con identificador único y marca temporal.
+- SI la persistencia falla, EL SISTEMA DEBERÁ informar el error sin exponer secretos.
 
-### FR-6 — Provide a usable demo
+### RF-6 — Proporcionar una demostración utilizable
 
-The project must provide a public interface or executable user experience.
+El proyecto debe ofrecer una interfaz pública o una experiencia ejecutable.
 
-**Acceptance criteria**
+**Criterios de aceptación**
 
-- A reviewer SHALL be able to submit a source and inspect the result.
-- The interface SHALL display errors and loading states clearly.
+- Una persona evaluadora DEBERÁ poder enviar una fuente e inspeccionar el resultado.
+- La interfaz DEBERÁ mostrar claramente los estados de carga y los errores.
 
-## 3. Non-functional requirements
+## 3. Requisitos no funcionales
 
-- Responses should complete within a reasonable demo time.
-- Secrets must be stored in environment variables or AWS configuration, never committed.
-- The implementation must include basic logging and error handling.
-- The codebase must remain small enough to complete and test during the hackathon.
-- The README must document Kiro and AWS usage.
+- Las respuestas deben completarse dentro de un tiempo razonable para una demostración.
+- Los secretos deben almacenarse en variables de entorno o en la configuración de AWS y nunca incluirse en commits.
+- La implementación debe incluir registros básicos y manejo de errores.
+- El código debe mantenerse lo bastante pequeño como para completarse y probarse durante el hackathon.
+- El README debe documentar el uso de Kiro y AWS.
 
-## 4. Out of scope
+## 4. Fuera del alcance
 
-- PDF ingestion
-- Full RAG
+- Ingesta de PDF
+- RAG completo
 - Knowledge Graph
-- Multiple autonomous agents
-- Authentication
-- Multi-tenant support
+- Múltiples agentes autónomos
+- Autenticación
+- Soporte multi-tenant
