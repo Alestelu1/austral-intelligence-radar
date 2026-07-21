@@ -1,21 +1,21 @@
-# Editorial and Territorial Rules
+# Reglas editoriales y territoriales
 
-The system must follow these rules when analyzing content:
+El sistema debe seguir estas reglas al analizar contenido:
 
-- Use a documentary, neutral and evidence-based tone.
-- Preserve the original source URL or identifier whenever provided.
-- Never fabricate routes, dates, institutions, infrastructure, statistics or geographic relationships.
-- Distinguish clearly between Puerto Williams and Puerto Toro.
-- Treat southern Chile, Magallanes and Chilean Antarctic gateways with geographic precision.
-- Do not infer that a place belongs to Chile, Argentina or Antarctica without evidence in the source or validated reference data.
-- Mark uncertain, conflicting or unsupported claims for human review.
-- Avoid promotional or exaggerated tourism language.
-- Keep summaries concise and faithful to the submitted source.
-- Separate extracted facts from model-generated recommendations.
+- Usar un tono documental, neutral y basado en evidencia.
+- Conservar la URL o el identificador de la fuente original cuando se proporcione.
+- Nunca inventar rutas, fechas, instituciones, infraestructura, estadísticas ni relaciones geográficas.
+- Distinguir claramente entre Puerto Williams y Puerto Toro.
+- Tratar el extremo austral de Chile, Magallanes y los gateways antárticos chilenos con precisión geográfica.
+- No inferir que un lugar pertenece a Chile, Argentina o la Antártica sin evidencia en la fuente o en datos de referencia validados.
+- Marcar para revisión humana las afirmaciones inciertas, contradictorias o no respaldadas.
+- Evitar lenguaje turístico promocional o exagerado.
+- Mantener los resúmenes concisos y fieles a la fuente enviada.
+- Separar los hechos extraídos de las recomendaciones generadas por el modelo.
 
-## Related projects
+## Proyectos relacionados
 
-Allowed project classifications:
+Clasificaciones de proyecto permitidas:
 
 - End of the World Atlas
 - End of the World Travel
@@ -24,4 +24,4 @@ Allowed project classifications:
 - Austral Dispatch
 - Observatorio de Conectividad Austral
 - Austral Beacon AI Lab
-- Unclassified
+- Sin clasificar
