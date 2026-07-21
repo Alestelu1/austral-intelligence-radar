@@ -1,21 +1,21 @@
-# Project Context
+# Contexto del proyecto
 
-Austral Intelligence Radar is a specialized AI agent created for the Hackathon Kiro by Código Facilito and AWS.
+Austral Intelligence Radar es un agente de IA especializado creado para el Hackathon Kiro de Código Facilito y AWS.
 
-The agent supports the Austral Beacon Media ecosystem by analyzing source material related to southern Chile, Patagonia, Magallanes, Tierra del Fuego, Cape Horn and Antarctic gateways.
+El agente apoya al ecosistema Austral Beacon Media mediante el análisis de fuentes relacionadas con el extremo austral de Chile, Patagonia, Magallanes, Tierra del Fuego, Cabo de Hornos y los gateways antárticos.
 
-## Core objective
+## Objetivo principal
 
-Transform unstructured source content into a traceable editorial intelligence record.
+Transformar contenido no estructurado de una fuente en una ficha de inteligencia editorial trazable.
 
-## Primary user
+## Usuario principal
 
-Alexis Stelu, developer and editor of Austral Beacon Media.
+Alexis Stelu, desarrollador y editor de Austral Beacon Media.
 
-## Product boundaries
+## Límites del producto
 
-- Build one reliable end-to-end workflow.
-- Prefer a small functional implementation over a broad unfinished platform.
-- Keep the hackathon project independent from the Alura Challenge.
-- Do not turn the MVP into a full RAG or multi-agent system.
-- Preserve a path for later integration into Austral Beacon AI Lab.
+- Construir un único flujo confiable de principio a fin.
+- Preferir una implementación pequeña y funcional antes que una plataforma amplia e incompleta.
+- Mantener el proyecto del hackathon independiente del Challenge de Alura.
+- No convertir el MVP en un sistema RAG completo ni en una plataforma multiagente.
+- Preservar una ruta de integración posterior con Austral Beacon AI Lab.
