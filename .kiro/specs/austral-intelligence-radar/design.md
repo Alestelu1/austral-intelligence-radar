@@ -1,24 +1,24 @@
-# Design
+# Diseño
 
-## 1. Architecture
+## 1. Arquitectura
 
 ```text
-Browser UI
+Interfaz web
    ↓ HTTPS
 Amazon API Gateway
    ↓
 AWS Lambda
-   ├── validate request
-   ├── call AI model
-   ├── validate structured output
-   └── persist result
+   ├── validar solicitud
+   ├── invocar modelo de IA
+   ├── validar salida estructurada
+   └── persistir resultado
         ↓
 Amazon DynamoDB
 ```
 
-The model service should be available through AWS. Amazon Bedrock is preferred when account access and model availability permit it.
+El servicio de modelos debe estar disponible mediante AWS. Se prefiere Amazon Bedrock cuando el acceso de la cuenta y la disponibilidad del modelo lo permitan.
 
-## 2. Request model
+## 2. Modelo de solicitud
 
 ```json
 {
@@ -27,7 +27,7 @@ The model service should be available through AWS. Amazon Bedrock is preferred w
 }
 ```
 
-## 3. Analysis record
+## 3. Registro de análisis
 
 ```json
 {
@@ -55,46 +55,48 @@ The model service should be available through AWS. Amazon Bedrock is preferred w
 }
 ```
 
-## 4. Backend responsibilities
+Las claves JSON y sus valores enumerados permanecen en inglés para mantener consistencia técnica en el código y las integraciones.
 
-- Reject empty or oversized input.
-- Build a constrained analysis prompt from Steering rules.
-- Request structured JSON from the model.
-- Validate required fields and enumerations.
-- Fall back safely when the model omits fields.
-- Add server-generated ID and timestamp.
-- Store the validated record in DynamoDB.
-- Return a sanitized response to the UI.
+## 4. Responsabilidades del backend
 
-## 5. Frontend responsibilities
+- Rechazar entradas vacías o demasiado extensas.
+- Construir un prompt de análisis restringido a partir de las reglas de Steering.
+- Solicitar al modelo una respuesta JSON estructurada.
+- Validar campos obligatorios y valores enumerados.
+- Aplicar valores seguros cuando el modelo omita campos.
+- Añadir en el servidor el identificador y la marca temporal.
+- Guardar el registro validado en DynamoDB.
+- Devolver a la interfaz una respuesta sanitizada.
 
-- Provide source text and optional URL fields.
-- Show loading, success and error states.
-- Render the structured result in readable sections.
-- Visually highlight confidence and human-review status.
-- Avoid exposing AWS credentials or internal model prompts.
+## 5. Responsabilidades del frontend
 
-## 6. AWS resources
+- Proporcionar campos para texto y URL opcional.
+- Mostrar estados de carga, éxito y error.
+- Presentar el resultado estructurado en secciones legibles.
+- Destacar visualmente la confianza y el estado de revisión humana.
+- Evitar exponer credenciales de AWS o prompts internos del modelo.
 
-Minimum resources:
+## 6. Recursos de AWS
 
-- API Gateway endpoint
-- Lambda analysis function
-- DynamoDB table
-- CloudWatch logs
-- IAM role using least privilege
+Recursos mínimos:
 
-## 7. Error handling
+- endpoint de API Gateway;
+- función Lambda de análisis;
+- tabla DynamoDB;
+- registros de CloudWatch;
+- rol IAM con principio de mínimo privilegio.
 
-- `400`: invalid request.
-- `422`: model output cannot be validated.
-- `500`: unexpected processing or persistence failure.
-- Logs must not contain secrets or entire sensitive source documents.
+## 7. Manejo de errores
 
-## 8. Security
+- `400`: solicitud no válida.
+- `422`: la salida del modelo no puede validarse.
+- `500`: fallo inesperado de procesamiento o persistencia.
+- Los registros no deben contener secretos ni documentos fuente sensibles completos.
 
-- No credentials in Git.
-- Use environment variables and IAM roles.
-- Restrict CORS to the deployed frontend when practical.
-- Define input-length limits.
-- Escape rendered model output in the browser.
+## 8. Seguridad
+
+- No incluir credenciales en Git.
+- Usar variables de entorno y roles IAM.
+- Restringir CORS al frontend desplegado cuando sea viable.
+- Definir límites de longitud para la entrada.
+- Escapar en el navegador el contenido generado por el modelo.
