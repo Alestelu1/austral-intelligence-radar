@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "austral-intelligence-radar"
+version = "0.1.0"
+description = "Agente especializado para analizar y clasificar fuentes territoriales y antárticas."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "Alexis Stelu" }
+]
+dependencies = [
+  "pydantic>=2.8,<3.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3,<9.0",
+  "ruff>=0.6,<1.0"
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/austral_radar"]
