@@ -6,8 +6,8 @@
 - [x] Definir el problema y los límites del MVP.
 - [x] Añadir el contexto de Steering y las reglas editoriales.
 - [x] Definir los requisitos y el diseño inicial.
-- [ ] Añadir la estructura del proyecto Python y la gestión de dependencias.
-- [ ] Definir en código el esquema JSON del análisis.
+- [x] Añadir la estructura del proyecto Python y la gestión de dependencias.
+- [x] Definir en código el esquema JSON del análisis.
 
 ## Fase 2 — Flujo vertical local
 
