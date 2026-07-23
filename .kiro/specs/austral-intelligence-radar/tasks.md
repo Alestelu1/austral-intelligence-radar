@@ -12,7 +12,7 @@
 ## Fase 2 — Flujo vertical local
 
 - [x] Implementar validación de entrada.
-- [ ] Implementar un analizador simulado y determinista para desarrollar la interfaz.
+- [x] Implementar un analizador simulado y determinista para desarrollar la interfaz.
 - [ ] Construir el formulario web mínimo y la vista de resultados.
 - [ ] Añadir pruebas para entrada vacía y salida estructurada válida.
 - [ ] Demostrar localmente el flujo completo sin persistencia en AWS.
