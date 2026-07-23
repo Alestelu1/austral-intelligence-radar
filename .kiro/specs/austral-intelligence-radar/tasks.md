@@ -13,9 +13,9 @@
 
 - [x] Implementar validación de entrada.
 - [x] Implementar un analizador simulado y determinista para desarrollar la interfaz.
-- [ ] Construir el formulario web mínimo y la vista de resultados.
-- [ ] Añadir pruebas para entrada vacía y salida estructurada válida.
-- [ ] Demostrar localmente el flujo completo sin persistencia en AWS.
+- [x] Construir el formulario web mínimo y la vista de resultados.
+- [x] Añadir pruebas para entrada vacía y salida estructurada válida.
+- [x] Demostrar localmente el flujo completo sin persistencia en AWS.
 
 ## Fase 3 — Integración de IA
 
